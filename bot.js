@@ -23,6 +23,13 @@ client.on('message', msg => {
     servername = server.name;
     console.log(count + ": " + servername + ' #' + channelname + ', ' + username + ': ' + content);
   }
+  // START THE COMMANDS
+	if (content.toLowerCase().startsWith(prefix + 'kick')){
+		var tobekicked = msg.mentions.members.first();
+		if (user.hasPermission("Kick Members")){
+			tobekicked.kick('You have been kicked by '+username+' !')	
+		}
+	}
 });
 
 client.login(token);
