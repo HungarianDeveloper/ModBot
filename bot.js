@@ -21,7 +21,6 @@ client.on('message', msg => {
 	channelname = channel.name;
     server = channel.guild;
     servername = server.name;
-    sendmessage(username, servername, channelname, content);
     console.log(count + ": " + servername + ' #' + channelname + ', ' + username + ': ' + content);
   }
 });
