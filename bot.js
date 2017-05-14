@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 var count = 0;
 var token = "";
+var prefix = '|'
 
 client.on('ready', () => {
   console.log("Logged in as " + client.user.username + "!");
@@ -29,7 +30,13 @@ client.on('message', msg => {
 		if (user.hasPermission("Kick Members")){
 			tobekicked.kick('You have been kicked by '+username+' !')	
 		}
-	}
+	};
+	if (content.toLowerCase().startsWith(prefix + 'ban')){
+		var tobebanned = msg.mentions.members.first();
+		if (user.hasPermission("Ban Members")){
+			tobekicked.ban('You have been banned by '+username+' !')	
+		}
+	};
 });
 
 client.login(token);
