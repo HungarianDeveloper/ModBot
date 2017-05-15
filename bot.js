@@ -34,7 +34,7 @@ client.on('message', msg => {
 	if (content.toLowerCase().startsWith(prefix + 'ban')){
 		var tobebanned = msg.mentions.members.first();
 		if (user.hasPermission("Ban Members")){
-			tobekicked.ban('You have been banned by '+username+' !')	
+			tobebanned.ban('You have been banned by '+username+' !')	
 		}
 	};
 });
