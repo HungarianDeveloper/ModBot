@@ -44,6 +44,13 @@ client.on('message', msg => {
 		}
 	} else if (c.startsWith(prefix + 'ping')) {
 		msg.reply('Pong!');
+	}else if(c.startsWith(prefix + 'warn')){
+		var towarn = msg.mentions.members.first();
+		let 
+		if (user.hasPermission("Administrator"){
+		    	let args = message.content.split(' ').slice(1);
+			towarn.send('You have been warned! '+args[2])
+		}
 	}
 });
 
